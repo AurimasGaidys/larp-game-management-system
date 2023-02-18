@@ -39,7 +39,7 @@ export default function Code({searchParams}:any) {
     }
 
     return (
-        <div className="flex h-screen bg-gray-100 p-2">
+        <div className="flex h-screen bg-gray-100 dark:bg-gray-900 p-2">
             <div className="m-auto">
                 <div>
                     <h1 className="text-6xl uppercase font-extrabold text-center">Dvidlis</h1>
@@ -47,7 +47,7 @@ export default function Code({searchParams}:any) {
                     <p className="text-4xl font-light pt-16 text-center">Identify yourself</p>
 
 
-                    <div className="mt-5 bg-white rounded-lg shadow">
+                    <div className="mt-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="flex">
                             <div className="flex-1 py-5 pl-5 overflow-hidden">
                                 <h1 className="inline text-2xl font-semibold leading-none">Scan Qr</h1>

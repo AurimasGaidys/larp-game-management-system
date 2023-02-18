@@ -8,7 +8,7 @@ import { TextInput } from '../../../components/base/imput/TextInput';
 import { firebaseAuth } from '../../../dataLayer/initFirebase';
 
 
-export default function SignUp({ searchParams }: any) {
+export default function Bio({ searchParams }: any) {
 
     // Initialize Firebase
     const router = useRouter();
@@ -22,17 +22,17 @@ export default function SignUp({ searchParams }: any) {
     }, [])
 
     return (
-        <div className="flex h-screen bg-gray-100 p-2">
+        <div className="flex h-screen bg-gray-100 dark:bg-gray-900 p-2">
             <div className="m-auto">
                 <div>
-                    <div className="mt-5 bg-white rounded-lg shadow">
+                    <div className="mt-5 bg-white dark:bg-gray-800 rounded-lg shadow">
                         <div className="flex">
                             <div className="flex flex-col flex-1 py-5 pl-5 overflow-hidden justify-center">
                                 <h1 className="inline text-2xl font-semibold leading-none text-center pb-5">PERSONAL BIO</h1>
                                 <div className="flex flex-wrap justify-center">
                                     <div className="flex justify-center w-full">
                                         <div className="relative">
-                                            <img src="https://source.unsplash.com/jmURdhtm7Ng/120x120" className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 max-w-[150px]" />
+                                            <img src="https://source.unsplash.com/jmURdhtm7Ng/120x120" className="dark:shadow-xl border-gray-500 rounded-full align-middle border-8 max-w-[150px]" />
                                         </div>
                                     </div>
                                 </div>
@@ -44,14 +44,14 @@ export default function SignUp({ searchParams }: any) {
                             </p>
                         </div>
                     </div>
-                    <div className="mt-5 p-5 bg-white rounded-lg shadow ">
+                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow ">
                         <div className="px-5 pb-5 space-y-5">
                             <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Objectives</h2>
                                 <li>Primint Vaidui apie visata</li>
                                 <li>Kai nesutiks dar karta primint</li>
                         </div>
                     </div>
-                    <div className="mt-5 p-5 bg-white rounded-lg shadow">
+                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="px-5 pb-5 space-y-5">
                             <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Known associates</h2>
                             <div className="space-y-5">
@@ -72,7 +72,7 @@ export default function SignUp({ searchParams }: any) {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-5 p-5 bg-white rounded-lg shadow">
+                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="px-5 pb-5 space-y-5">
                             <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Observed events</h2>
                             <div className="space-y-5">
@@ -87,7 +87,7 @@ export default function SignUp({ searchParams }: any) {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-5 p-5 bg-white rounded-lg shadow">
+                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="px-5 pb-5 space-y-5">
                             <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Pasive abilities</h2>
                             <div className="space-y-5">
