@@ -14,7 +14,7 @@ export default function YourProfile({ searchParams }: any) {
 
     const submit = (data: any) => {
         console.log("Code is", name, phone);
-        router.push('/main/profile')
+        router.push('/main/bio')
     }
 
     return (

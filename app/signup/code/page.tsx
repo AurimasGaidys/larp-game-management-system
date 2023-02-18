@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import QrReader from 'react-qr-scanner'
+import dynamic from "next/dynamic";
+// import QrReader from 'react-qr-scanner'
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
 
@@ -12,6 +13,10 @@ export default function Code({searchParams}:any) {
     // Initialize Firebase
     const router = useRouter();
     const [code, setCode] = useState(searchParams?.code || "");
+
+    const QrReader = dynamic(() => import('react-qr-scanner'), {
+        ssr: false
+        })
 
     const submit = (data: any) => {
         console.log("Code is", code, searchParams);
@@ -49,8 +54,9 @@ export default function Code({searchParams}:any) {
                             </div>
                         </div>
                         <div className="px-5 pb-5">
-                        <QrReader
-                            delay={100}
+                         {QrReader && <QrReader
+                         // @ts-ignore
+                            delay={300}
                             style={{
                                 height: 240,
                                 width: 320,
@@ -58,7 +64,7 @@ export default function Code({searchParams}:any) {
                             }}
                             onError={handleError}
                             onScan={handleScan}
-                        />
+                        /> }
                         </div>
                         <div className="flex">
                             <div className="flex-1 py-5 pl-5 overflow-hidden">
