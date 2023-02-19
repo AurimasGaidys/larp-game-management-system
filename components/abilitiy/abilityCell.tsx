@@ -1,5 +1,3 @@
-'use client';
-
 import { useRouter } from 'next/navigation';
 interface Props {
     id: string;
@@ -7,11 +5,11 @@ interface Props {
     title: string;
 }
 
-export const InvestigationCell = ({ id, image, title }: Props) => {
+export const AbilityCell = ({ id, image, title }: Props) => {
     const router = useRouter();
 
     return <div
-        onClick={(e) => { router.push(`/main/investigation/${id}`); }}
+        onClick={(e) => { router.push(`/main/ability/${id}`); }}
         className="rounded shadow-lg shadow-gray-200 dark:shadow-gray-900 bg-white dark:bg-gray-800 duration-300 hover:-translate-y-1"
         x-for="(post, index) in posts">
         <div className="cursor-pointer">
