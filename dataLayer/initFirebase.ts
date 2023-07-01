@@ -1,5 +1,5 @@
 import { FirebaseOptions, getApp, initializeApp } from "firebase/app";
-import { getAuth, browserLocalPersistence, setPersistence } from "firebase/auth";
+import { getAuth } from "firebase/auth";
 
 const firebaseConfig:FirebaseOptions = {
     apiKey: "AIzaSyCa1UzcWZkc7Zjgy41hxvhMnRGYTabZMOw",
