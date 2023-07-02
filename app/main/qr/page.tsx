@@ -4,11 +4,18 @@
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
-import QrReader from 'react-qr-scanner'
+//  import QrReader from 'react-qr-scanner'
+
+import dynamic from "next/dynamic";
 
 export default function Page() {
   const router = useRouter();
   const [result, setResult] = useState();
+
+  const QrReader = dynamic(() => import('react-qr-scanner'), {
+    ssr: false
+  }) as any;
+
 
   const handleScan = (data: any) => {
     if (data != null) {
@@ -24,16 +31,15 @@ export default function Page() {
     console.error(err)
   }
 
-  const previewStyle = {
-    height: 240,
-    width: 320,
-  }
-
   return <div>
     <h1>Scan QR code</h1>
     {QrReader && <QrReader
-      delay={100}
-      style={previewStyle}
+      delay={300}
+      style={{
+        height: 240,
+        width: 320,
+        borderRadius: 10
+      }}
       onError={handleError}
       onScan={handleScan}
     />}

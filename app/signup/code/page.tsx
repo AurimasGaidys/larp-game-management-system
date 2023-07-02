@@ -2,21 +2,21 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-// import dynamic from "next/dynamic";
-import QrReader from 'react-qr-scanner'
+import dynamic from "next/dynamic";
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
 
 
-export default function Code({searchParams}:any) {
+export default function Code({ searchParams }: any) {
 
     // Initialize Firebase
     const router = useRouter();
     const [code, setCode] = useState(searchParams?.code || "");
 
-    // const QrReader = dynamic(() => import('react-qr-scanner'), {
-    //     ssr: false
-    //     })
+
+    const QrReader = dynamic(() => import('react-qr-scanner'), {
+        ssr: false
+    }) as any;
 
     const submit = (data: any) => {
         console.log("Code is", code, searchParams);
@@ -26,7 +26,7 @@ export default function Code({searchParams}:any) {
     }
 
     const handleScan = (data: any) => {
-        if(data){
+        if (data) {
             console.log("qr data", data);
             const newCode = data.text?.split("code=")?.[1];
             console.log("qr data", newCode);
@@ -54,17 +54,16 @@ export default function Code({searchParams}:any) {
                             </div>
                         </div>
                         <div className="px-5 pb-5">
-                         {QrReader && <QrReader
-                         // @ts-ignore
-                            delay={300}
-                            style={{
-                                height: 240,
-                                width: 320,
-                                borderRadius: 10
-                            }}
-                            onError={handleError}
-                            onScan={handleScan}
-                        /> }
+                            {QrReader && <QrReader
+                                delay={300}
+                                style={{
+                                    height: 240,
+                                    width: 320,
+                                    borderRadius: 10
+                                }}
+                                onError={handleError}
+                                onScan={handleScan}
+                            />}
                         </div>
                         <div className="flex">
                             <div className="flex-1 py-5 pl-5 overflow-hidden">
