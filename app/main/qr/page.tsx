@@ -1,10 +1,12 @@
 'use client';
 
+//declare module 'react-qr-scanner';
+
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
 import QrReader from 'react-qr-scanner'
 
-const Post = () => {
+export default function Page() {
   const router = useRouter();
   const [result, setResult] = useState();
 
@@ -29,14 +31,12 @@ const Post = () => {
 
   return <div>
     <h1>Scan QR code</h1>
-    <QrReader
+    {QrReader && <QrReader
       delay={100}
       style={previewStyle}
       onError={handleError}
       onScan={handleScan}
-    />
+    />}
     <p>{JSON.stringify(result)}</p>
   </div>
 }
-
-export default Post

@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation'
-import dynamic from "next/dynamic";
-// import QrReader from 'react-qr-scanner'
+// import dynamic from "next/dynamic";
+import QrReader from 'react-qr-scanner'
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
 
@@ -14,9 +14,9 @@ export default function Code({searchParams}:any) {
     const router = useRouter();
     const [code, setCode] = useState(searchParams?.code || "");
 
-    const QrReader = dynamic(() => import('react-qr-scanner'), {
-        ssr: false
-        })
+    // const QrReader = dynamic(() => import('react-qr-scanner'), {
+    //     ssr: false
+    //     })
 
     const submit = (data: any) => {
         console.log("Code is", code, searchParams);
