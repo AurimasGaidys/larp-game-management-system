@@ -1,5 +1,6 @@
 import { FirebaseOptions, getApp, initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFunctions } from "firebase/functions";
 
 const firebaseConfig:FirebaseOptions = {
     apiKey: "AIzaSyCa1UzcWZkc7Zjgy41hxvhMnRGYTabZMOw",
@@ -21,4 +22,4 @@ function createFirebaseApp(config: FirebaseOptions) {
 
 const firebaseApp = createFirebaseApp(firebaseConfig);
 export const firebaseAuth = getAuth(firebaseApp);
-export const firebaseAuth2 = getAuth(firebaseApp);
+export const fbFunctions = getFunctions(firebaseApp, "europe-west3");
