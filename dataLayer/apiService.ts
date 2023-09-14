@@ -14,3 +14,12 @@ export const onGetLocation = async (locationId: string) => {
 
     return data as BaseResponseDto;
 }
+
+export const onGetDT = async (dialogTreeId: string) => {
+
+    const functionRef = httpsCallable(fbFunctions, "onDialogTreeCall");
+    const { data } = await functionRef({ dialogTreeId: dialogTreeId });
+    console.log(data);
+
+    return data as BaseResponseDto;
+}
