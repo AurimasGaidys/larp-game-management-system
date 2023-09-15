@@ -1,4 +1,4 @@
-import { PrimaryButton } from "../../base/button/PrimaryButton";
+import { DTButton } from "../../base/button/DTButton";
 
 interface TextProps {
     payload: string
@@ -6,7 +6,7 @@ interface TextProps {
 
 export const ButtonElement = (p: TextProps) => {
     const cata = JSON.parse(p.payload);
-    return <PrimaryButton
+    return <DTButton
         title={cata.name}
         onClick={() => { }}
     />
