@@ -4,18 +4,42 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation'
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
+import { onSaveAgentInfo } from '../../../dataLayer/apiService';
 
 export default function YourProfile({ searchParams }: any) {
 
     // Initialize Firebase
     const router = useRouter();
-    const [name, setName] = useState(searchParams?.code || "");
-    const [phone, setPhone] = useState(searchParams?.code || "");
+    const [name, setName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [image, setImage] = useState("");
 
-    const submit = (data: any) => {
-        console.log("Code is", name, phone);
-        router.push('/main/bio')
+    const submit = async (data: any) => {
+        if (name === "") {
+            alert("Please enter name");
+            return;
+        }
+
+        if (phone === "") {
+            alert("Please enter phone");
+            return;
+        }
+
+        const resp = await onSaveAgentInfo({
+            name,
+            phone,
+            avatar: "https://photogeeksteven.files.wordpress.com/2014/06/default-user-icon-profile.png"
+        });
+        console.log("resp is", resp);
+
+        if (resp.success) {
+            router.push('/main/bio')
+        } else {
+            alert("Invalid data: " + resp.error || "");
+        }
     }
+
+//onSaveAgentInfo
 
     return (
         <div className="flex h-screen bg-gray-100 dark:bg-gray-900 p-2">

@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 import dynamic from "next/dynamic";
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
+import { onEnterCoupon } from '../../../dataLayer/apiService';
 
 
 export default function Code({ searchParams }: any) {
@@ -18,11 +19,26 @@ export default function Code({ searchParams }: any) {
         ssr: false
     }) as any;
 
-    const submit = (data: any) => {
+    const submit = async (data: any) => {
         console.log("Code is", code, searchParams);
-        const codes = "http://localhost:3000/signup/code?code=12343"
-        console.log("Code ss is", codes);
-        router.push('/signup/your-profile')
+        if (code === "") {
+            alert("Please enter code");
+            return;
+        }
+
+        const resp = await onEnterCoupon(code);
+        console.log("resp is", resp);
+
+        if (resp.success) {
+            router.push('/signup/your-profile')
+        } else {
+            alert("Invalid code: " + resp.error || "");
+        }
+
+
+        // const codes = "http://localhost:3000/signup/code?code=12343"
+        // console.log("Code ss is", codes);
+        // router.push('/signup/your-profile')
     }
 
     const handleScan = (data: any) => {

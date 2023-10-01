@@ -23,3 +23,27 @@ export const onGetDT = async (dialogTreeId: string) => {
 
     return data as BaseResponseDto;
 }
+
+export const onEnterCoupon = async (couponCode: string) => {
+
+    const functionRef = httpsCallable(fbFunctions, "onEnterCouponCall");
+    const { data } = await functionRef({ dto: { couponCode: couponCode } });
+    console.log(data);
+
+    return data as BaseResponseDto;
+}
+
+interface IOnGetAgentInfo {
+    name: string;
+    phone: string;
+    avatar: string;
+}
+
+export const onSaveAgentInfo = async (dto: IOnGetAgentInfo) => {
+
+    const functionRef = httpsCallable(fbFunctions, "onSaveAgentInfoCall");
+    const { data } = await functionRef({ dto });
+    console.log(data);
+
+    return data as BaseResponseDto;
+}
