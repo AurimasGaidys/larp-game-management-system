@@ -1,6 +1,6 @@
 "use client"
 
-import { Suspense, use } from "react"
+import { useEffect, useState } from "react"
 import { onGetDT } from "../../../../dataLayer/apiService"
 import { useRouter } from 'next/navigation';
 import { ElementFactory } from "../../../../components/dt/element-factory";
@@ -15,28 +15,42 @@ const Loading = () => {
     return <h2>🌀 Loading...</h2>;
 }
 
-const Tree = ({ id }: { id: string }) => {
-    const router = useRouter();
+interface TreeProps {
+    id: string,
+    treeData: any
+}
 
-    if (id === '') {
-        return null;
-    }
+const Tree = ({ id, treeData }: TreeProps) => {
 
-    const location = use(onGetDT(id));
-    const locationData = JSON.parse(location.data);
 
     return <div>
-        {locationData.data.map((item: {type: number, payloadJson: string}) => {
-            return <ElementFactory type={item.type} payload={item.payloadJson} treeId={id}/>
+        {treeData.data.map((item: { type: number, payloadJson: string }) => {
+            return <ElementFactory type={item.type} payload={item.payloadJson} treeId={id} />
         })}
     </div>
 }
 
 const Page = (props: PageProps) => {
+    const router = useRouter();
+    const [treeData, setTreeData] = useState();
 
-    return <Suspense fallback={<Loading />}>
-        <Tree id={props.params.id} />
-    </Suspense>
+    useEffect(() => {
+        if (!props.params.id) {
+            router.push('/main/dt');
+        }
+        console.log("🚀 ~ file: page.tsx ~ line 100 ~ useEffect ~ props.params.id", props.params.id)
+
+        onGetDT(props.params.id).then((data) => {
+            const locationData = JSON.parse(data.data);
+            setTreeData(locationData);
+        });
+    }, [props.params.id]);
+
+    if (!treeData) {
+        return <Loading />
+    }
+
+    return <Tree id={props.params.id} treeData={treeData} />
 }
 
 export default Page
