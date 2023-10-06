@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { onGetDT } from "../../../../dataLayer/apiService"
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { ElementFactory } from "../../../../components/dt/element-factory";
 
 interface PageProps {
@@ -32,19 +32,20 @@ const Tree = ({ id, treeData }: TreeProps) => {
 
 const Page = (props: PageProps) => {
     const router = useRouter();
+    const params = useSearchParams()?.get("reload");
     const [treeData, setTreeData] = useState();
 
     useEffect(() => {
         if (!props.params.id) {
             router.push('/main/dt');
         }
-        console.log("🚀 ~ file: page.tsx ~ line 100 ~ useEffect ~ props.params.id", props.params.id)
+        console.log("🚀 ~ file: page.tsx ~ line 100 ~ useEffect ~ props.params.id", props.params.id, params)
 
         onGetDT(props.params.id).then((data) => {
             const locationData = JSON.parse(data.data);
             setTreeData(locationData);
         });
-    }, [props.params.id]);
+    }, [props.params.id, params]);
 
     if (!treeData) {
         return <Loading />
