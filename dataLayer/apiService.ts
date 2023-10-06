@@ -47,3 +47,13 @@ export const onSaveAgentInfo = async (dto: IOnGetAgentInfo) => {
 
     return data as BaseResponseDto;
 }
+
+
+export const onAction= async (actionId: string, treeId: string, pageId: string) => {
+
+    const functionRef = httpsCallable(fbFunctions, "onActionCall");
+    const { data } = await functionRef({ actionId, treeId, pageId });
+    console.log(data);
+
+    return data as BaseResponseDto;
+}

@@ -1,7 +1,7 @@
 "use client"
 
 import { Suspense, use } from "react"
-import { onGetDT, onGetLocation } from "../../../../dataLayer/apiService"
+import { onGetDT } from "../../../../dataLayer/apiService"
 import { useRouter } from 'next/navigation';
 import { ElementFactory } from "../../../../components/dt/element-factory";
 
@@ -27,7 +27,7 @@ const Tree = ({ id }: { id: string }) => {
 
     return <div>
         {locationData.data.map((item: {type: number, payloadJson: string}) => {
-            return <ElementFactory type={item.type} payload={item.payloadJson} />
+            return <ElementFactory type={item.type} payload={item.payloadJson} treeId={id}/>
         })}
     </div>
 }

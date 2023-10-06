@@ -6,7 +6,7 @@ import { TextElement } from "./elements/text";
 import { VideoElement } from "./elements/video";
 import { Wrapper } from "./wraper";
 
-export const ElementFactory = ({ type, payload }: { type: number, payload: string }) => {
+export const ElementFactory = ({ type, payload, treeId }: { type: number, payload: string, treeId: string}) => {
     switch (type) {
         case 0:
             return <Wrapper><ImageElement payload={payload} /></Wrapper>;
@@ -21,7 +21,7 @@ export const ElementFactory = ({ type, payload }: { type: number, payload: strin
         case 5:
             return <Wrapper><AudioElement payload={payload} /></Wrapper>;
         case 6:
-            return <Wrapper><ButtonElement payload={payload} /></Wrapper>;
+            return <Wrapper><ButtonElement payload={payload} treeId={treeId}/></Wrapper>;
 
     }
     return <h2>{payload}</h2>;
