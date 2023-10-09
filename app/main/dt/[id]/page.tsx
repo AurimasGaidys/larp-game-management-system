@@ -39,8 +39,7 @@ const Page = (props: PageProps) => {
         if (!props.params.id) {
             router.push('/main/dt');
         }
-        console.log("🚀 ~ file: page.tsx ~ line 100 ~ useEffect ~ props.params.id", props.params.id, params)
-
+        
         onGetDT(props.params.id).then((data) => {
             const locationData = JSON.parse(data.data);
             setTreeData(locationData);
