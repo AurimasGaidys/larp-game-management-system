@@ -40,6 +40,7 @@ export default function Page() {
         width: 320,
         borderRadius: 10
       }}
+      facingMode={"environment"}
       onError={handleError}
       onScan={handleScan}
     />}
