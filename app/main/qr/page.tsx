@@ -41,6 +41,10 @@ export default function Page() {
         borderRadius: 10
       }}
       facingMode={"environment"}
+      constraints={{
+        audio: true,
+        video: { facingMode: "environment" }
+      }}
       onError={handleError}
       onScan={handleScan}
     />}
