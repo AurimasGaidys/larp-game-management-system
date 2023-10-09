@@ -27,6 +27,7 @@ export const MainHeader = () => {
                 <button onClick={qrPress}>
                     <img src="https://img.freepik.com/premium-vector/qr-code-scanning-scan-me-read-bar-code-mobility-generating-app-coding-icon-recognition-reading-qr-code-flat-style_399089-1628.jpg?w=1380" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
                 </button>
+                <p style={{color: "white"}}>{firebaseAuth.currentUser?.email}</p>
                 <div className={`${isOpen ? "" : "hidden"} justify-between items-center w-full lg:flex lg:w-auto lg:order-1`} id="mobile-menu-2">
                     <ul className="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
                         <li>
