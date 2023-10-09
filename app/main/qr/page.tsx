@@ -42,7 +42,6 @@ export default function Page() {
       }}
       facingMode={"environment"}
       constraints={{
-        audio: true,
         video: { facingMode: "environment" }
       }}
       onError={handleError}
