@@ -1,0 +1,44 @@
+.reactMarkDown {
+    padding: 10px;
+}
+
+.reactMarkDown ul {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    list-style: disc outside none;
+}
+
+.reactMarkDown ul li {
+    margin-left: 2em;
+    display: list-item;
+    text-align: -webkit-match-parent;
+}               
+
+.reactMarkDown H1 {
+    font-size: 32px;
+}     
+
+
+.reactMarkDown H2 {
+    font-size: 28px;
+}     
+
+
+
+.reactMarkDown H3 {
+    font-size: 24px;
+}     
+
+
+
+.reactMarkDown H4 {
+    font-size: 20px;
+}     
+
+
+
+.reactMarkDown H5 {
+    font-size: 16px;
+}     
+
+
