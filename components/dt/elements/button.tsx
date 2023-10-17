@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { globalLoadingState } from "../../../atoms/loadingState";
 import { onAction } from "../../../dataLayer/apiService";
 import { DTButton } from "../../base/button/DTButton";
 import { ButtonPayload } from "./payloads/dialogElementPayload";
@@ -13,7 +15,7 @@ interface TextProps {
 
 export const ButtonElement = (p: TextProps) => {
     const router = useRouter();
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useRecoilState(globalLoadingState);
 
     const cata = JSON.parse(p.payload) as ButtonPayload;
     return <DTButton

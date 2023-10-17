@@ -13,6 +13,7 @@
     "react-dom": "18.2.0",
     "react-markdown": "^9.0.0",
     "react-qr-scanner": "^1.0.0-alpha.11",
+    "recoil": "^0.7.7",
     "remark-gfm": "^4.0.0"
   },
   "devDependencies": {
