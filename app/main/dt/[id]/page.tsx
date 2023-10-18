@@ -4,6 +4,8 @@ import { useEffect, useState } from "react"
 import { onGetDT } from "../../../../dataLayer/apiService"
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ElementFactory } from "../../../../components/dt/element-factory";
+import { useRecoilState } from "recoil";
+import { globalLoadingState } from "../../../../atoms/loadingState";
 
 interface PageProps {
     params: {
@@ -34,6 +36,7 @@ const Page = (props: PageProps) => {
     const router = useRouter();
     const params = useSearchParams()?.get("reload");
     const [treeData, setTreeData] = useState();
+    const [loading, setLoading] = useRecoilState(globalLoadingState);
 
     useEffect(() => {
         if (!props.params.id) {
@@ -43,7 +46,10 @@ const Page = (props: PageProps) => {
         onGetDT(props.params.id).then((data) => {
             const locationData = JSON.parse(data.data);
             setTreeData(locationData);
+            setLoading(false);
         });
+
+
     }, [props.params.id, params]);
 
     if (!treeData) {
