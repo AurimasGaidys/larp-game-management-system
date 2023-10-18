@@ -21,14 +21,21 @@ export const ButtonElement = (p: TextProps) => {
     return <DTButton
         loading={loading}
         title={cata.name}
-        onClick={async () => {
+        onClick={() => {
             setLoading(true);
-            const result = await onAction(cata.actionId, p.treeId, "");
-            if (result.success) {
-                const url = JSON.parse(result.data).data.url;
-                router.push(url + `?reload=${new Date().getTime()}`);
-            }
-            setLoading(false);
+            console.log(loading)
+            onAction(cata.actionId, p.treeId, "").then((result) => {
+                if (result.success) {
+                    const url = JSON.parse(result.data).data.url;
+                    router.push(url + `?reload=${new Date().getTime()}`);
+                } else {
+                    alert("Request Failed" + result.error);
+                }
+                // Maybe
+                setTimeout(() => {
+                    setLoading(false);
+                }, 5000);
+            });
         }}
     />
 }
