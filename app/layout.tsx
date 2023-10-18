@@ -1,4 +1,5 @@
 import './globals.css'
+import { RecoilRoot } from "recoil"
 
 export default function RootLayout({
   children,
@@ -8,7 +9,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head />
-      <body>{children}</body>
+      <body>
+        <RecoilRoot>{children}</RecoilRoot></body>
     </html>
   )
 }
