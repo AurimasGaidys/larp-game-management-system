@@ -26,8 +26,6 @@ const Location = ({ id }: { id: string }) => {
             return;
         }
 
-        console.log("id", id);
-
         onGetLocation(id).then((data) => {
             setLocationData(JSON.parse(data.data));
         });
