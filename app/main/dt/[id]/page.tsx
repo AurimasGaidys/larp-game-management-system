@@ -6,6 +6,8 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { ElementFactory } from "../../../../components/dt/element-factory";
 import { useRecoilState } from "recoil";
 import { globalLoadingState } from "../../../../atoms/loadingState";
+import { globalEventState } from "../../../../atoms/eventState";
+import { globalUserState } from "../../../../atoms/userState";
 
 interface PageProps {
     params: {
@@ -37,10 +39,12 @@ const Page = (props: PageProps) => {
     const params = useSearchParams()?.get("reload");
     const [treeData, setTreeData] = useState();
     const [loading, setLoading] = useRecoilState(globalLoadingState);
-    const [gameObject, setGameObject] = useRecoilState(globalLoadingState);
-    const [userObject, setUserObject] = useRecoilState(globalLoadingState);
+    const [gameObject, setGameObject] = useRecoilState(globalEventState);
+    const [userObject, setUserObject] = useRecoilState(globalUserState);
 
     useEffect(() => {
+        console.log("DT PAGE");
+
         if (!props.params.id) {
             router.push('/main/dt');
         }

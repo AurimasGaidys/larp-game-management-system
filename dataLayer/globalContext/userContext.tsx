@@ -27,12 +27,16 @@ export const UserContext = () => {
             return;
         }
 
+        
         const docRef = doc(db, DatabaseTables.users, userId);
         const unsubscribe = onSnapshot(docRef, docSnap => {
+            console.log("Current data: ", docSnap.data());
             if (docSnap.exists()) {
+                
                 const result = docSnap.data() as User
                 setUserObject(result);
                 setEventId(result.eventId);
+                console.log("UserContext: ", result.tags);
             } else {
                 console.log("No such document!");
             }

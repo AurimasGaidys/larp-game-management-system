@@ -14,12 +14,16 @@ export const EventContext = () => {
     const [eventId, setEventId] = useRecoilState(globalEventId);
 
     useEffect(() => {
+
+
         if (eventId === "") {
             return;
         }
         
         const docRef = doc(db, DatabaseTables.event, eventId);
         const unsubscribe = onSnapshot(docRef, docSnap => {
+            console.log("Current data: ", docSnap.data());
+
             if (docSnap.exists()) {
                 const result = docSnap.data() as EventDTO
                 setGameObject(result);
