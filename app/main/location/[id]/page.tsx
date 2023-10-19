@@ -22,12 +22,19 @@ const Location = ({ id }: { id: string }) => {
     const [locationData, setLocationData] = useState<{treeId: string, name: string} | undefined>();
 
     useEffect(() => {
-        const location = use(onGetLocation(id));
-        setLocationData(JSON.parse(location.data));
+        if(id == "") {
+            return;
+        }
+
+        console.log("id", id);
+
+        onGetLocation(id).then((data) => {
+            setLocationData(JSON.parse(data.data));
+        });
     }, [id]);
     
     if (id === '') {
-        return null;
+        return <p>Loading...</p>;
     }
 
     // const location = use(onGetLocation(id));
