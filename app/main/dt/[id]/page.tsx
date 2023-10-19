@@ -37,6 +37,8 @@ const Page = (props: PageProps) => {
     const params = useSearchParams()?.get("reload");
     const [treeData, setTreeData] = useState();
     const [loading, setLoading] = useRecoilState(globalLoadingState);
+    const [gameObject, setGameObject] = useRecoilState(globalLoadingState);
+    const [userObject, setUserObject] = useRecoilState(globalLoadingState);
 
     useEffect(() => {
         if (!props.params.id) {
@@ -50,7 +52,7 @@ const Page = (props: PageProps) => {
         });
 
 
-    }, [props.params.id, params]);
+    }, [props.params.id, params, gameObject, userObject]);
 
     if (!treeData) {
         return <Loading />

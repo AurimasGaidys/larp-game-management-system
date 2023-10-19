@@ -1,4 +1,6 @@
 import { MainHeader } from '../../components/header/header'
+import { EventContext } from '../../dataLayer/globalContext/eventContext'
+import { UserContext } from '../../dataLayer/globalContext/userContext'
 import '../globals.css'
 
 export default function RootLayout({
@@ -11,6 +13,8 @@ export default function RootLayout({
       <head />
       <body>
         <MainHeader />
+        <UserContext />
+        <EventContext />
         {children}</body>
     </html>
   )
