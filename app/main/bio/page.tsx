@@ -2,24 +2,57 @@
 
 import { browserLocalPersistence, createUserWithEmailAndPassword, setPersistence } from "firebase/auth";
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { PrimaryButton } from '../../../components/base/button/PrimaryButton';
 import { TextInput } from '../../../components/base/imput/TextInput';
 import { firebaseAuth } from '../../../dataLayer/initFirebase';
+import { useRecoilState } from "recoil";
+import { globalLoadingState } from "../../../atoms/loadingState";
+import { globalEventState } from "../../../atoms/eventState";
+import { globalUserState } from "../../../atoms/userState";
+import { onGetDT } from "../../../dataLayer/apiService";
+import { ElementFactory } from "../../../components/dt/element-factory";
 
+interface TreeProps {
+    id: string,
+    treeData: any
+}
+
+const Tree = ({ id, treeData }: TreeProps) => {
+    return <div>
+        {treeData.data.map((item: { type: number, payloadJson: string }) => {
+            return <ElementFactory type={item.type} payload={item.payloadJson} treeId={id} />
+        })}
+    </div>
+}
 
 export default function Bio({ searchParams }: any) {
 
+    const treeId = "Global-Bio";
     // Initialize Firebase
     const router = useRouter();
-    const [email, setEmail] = useState("aurimas@ss.lt");
-    const [password, setPassword] = useState("aurimas@ss.lt");
+    const params = useSearchParams()?.get("reload");
+    const [treeData, setTreeData] = useState();
+    const [loading, setLoading] = useRecoilState(globalLoadingState);
+    const [gameObject, setGameObject] = useRecoilState(globalEventState);
+    const [userObject, setUserObject] = useRecoilState(globalUserState);
 
     useEffect(() => {
-        (async () => {
-            await setPersistence(firebaseAuth, browserLocalPersistence);
-        })();
-    }, [])
+        console.log("DT PAGE");
+
+        onGetDT(treeId).then((data) => {
+            const locationData = JSON.parse(data.data);
+            setTreeData(locationData);
+            setLoading(false);
+        });
+
+
+    }, [params, gameObject, userObject]);
+
+    // if (!treeData) {
+    //     return <Loading />
+    // }
+
 
     return (
         <div className="flex h-screen bg-gray-100 dark:bg-gray-900 p-2">
@@ -39,21 +72,12 @@ export default function Bio({ searchParams }: any) {
                             </div>
                         </div>
                         <div className="px-5 pb-5">
-                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Fictional name</h2>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow ">
-                        <div className="px-5 pb-5 space-y-5">
-                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Objectives</h2>
-                                <li>Primint Vaidui apie visata</li>
-                                <li>Kai nesutiks dar karta primint</li>
+                            {treeData == null ? "loading..." : <Tree id={treeId} treeData={treeData} />}
                         </div>
                     </div>
                     <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="px-5 pb-5 space-y-5">
-                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Known associates</h2>
+                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Known Locations</h2>
                             <div className="space-y-5">
                                 <div>
                                     <h3 className="font-semibold">Jonas medkirtys</h3>
@@ -74,22 +98,7 @@ export default function Bio({ searchParams }: any) {
                     </div>
                     <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
                         <div className="px-5 pb-5 space-y-5">
-                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Observed events</h2>
-                            <div className="space-y-5">
-                                <div>
-                                    <h3 className="font-semibold">UFO crash landing</h3>
-                                    <p>The Roswell incident centers on the recovery, in 1947, of mundane metallic and rubber debris from a military balloon that crashed near Roswell, </p>
-                                </div>
-                                <div>
-                                    <h3 className="font-semibold">Evil corp creation</h3>
-                                    <p>If you believe that you have no agency in the world, how can you believe in anything [or have] any kind of social trust</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mt-5 p-5 bg-white dark:bg-gray-800  rounded-lg shadow">
-                        <div className="px-5 pb-5 space-y-5">
-                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Pasive abilities</h2>
+                            <h2 className="inline text-2xl font-semibold leading-none text-center pb-5">Abilities</h2>
                             <div className="space-y-5">
                                 <div>
                                     <h3 className="font-semibold">Beisbolo lazda</h3>
