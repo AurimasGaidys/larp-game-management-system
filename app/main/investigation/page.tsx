@@ -1,6 +1,29 @@
+'use client';
+import { useEffect, useState } from 'react';
 import { InvestigationCell } from '../../../components/investigation/investigationCell';
+import { onGetInvestigationsCall, onGetNotesCall } from '../../../dataLayer/apiService';
 
 export default function Home() {
+
+    const [investigations, setInvestigations] = useState([]);
+    const [notes, setNotes] = useState([]);
+
+    useEffect(() => {
+        onGetNotesCall().then((data) => {
+            console.log(data);
+           const noteData = JSON.parse(data.data);
+            console.log("Notes", noteData.investigations);
+            setNotes(noteData.investigations)
+        });
+
+        onGetInvestigationsCall().then((data) => {
+            console.log(data);
+           const noteData = JSON.parse(data.data);
+            console.log("Investigations", noteData.investigations);
+            setInvestigations(noteData.investigations)
+        });
+        console.log("Investigation PAGE");
+    }, []);
 
     const posts = [
         {
@@ -57,6 +80,10 @@ export default function Home() {
         </div>
         <div className="grid grid-flow-row gap-5 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             {posts.map(x => <InvestigationCell id={x.id} image={x.image} title={x.title} />)}
+            Notes
+            {notes?.map(x => <p>{JSON.stringify(x)}</p>)}
+            INvestivations
+            {investigations?.map(x => <p>{JSON.stringify(x)}</p>)}
         </div>
     </section>
 

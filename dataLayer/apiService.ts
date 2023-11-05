@@ -57,3 +57,21 @@ export const onAction= async (actionId: string, treeId: string, pageId: string) 
 
     return data as BaseResponseDto;
 }
+
+export const onGetInvestigationsCall = async () => {
+
+    const functionRef = httpsCallable(fbFunctions, "onGetInvestigationsCall");
+    const { data } = await functionRef({});
+    console.log(data);
+
+    return data as BaseResponseDto;
+}
+
+export const onGetNotesCall = async () => {
+
+    const functionRef = httpsCallable(fbFunctions, "onGetNotesCall");
+    const { data } = await functionRef({});
+    console.log(data);
+
+    return data as BaseResponseDto;
+}

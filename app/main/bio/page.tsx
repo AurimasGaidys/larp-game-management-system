@@ -65,7 +65,9 @@ export default function Bio({ searchParams }: any) {
                                 <div className="flex flex-wrap justify-center">
                                     <div className="flex justify-center w-full">
                                         <div className="relative">
-                                            <img src="https://source.unsplash.com/jmURdhtm7Ng/120x120" className="dark:shadow-xl border-gray-500 rounded-full align-middle border-8 max-w-[150px]" />
+                                            <video  className="dark:shadow-xl border-gray-500 rounded-full align-middle border-8 max-w-[150px]" autoPlay muted loop>
+                                                <source src={"https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F40938050158.mp4?alt=media&token=1a015511-bbe4-4733-b460-c474c1ff8a2e&quot"} type="video/mp4" />
+                                            </video>
                                         </div>
                                     </div>
                                 </div>
@@ -82,7 +84,9 @@ export default function Bio({ searchParams }: any) {
                                 <div>
                                     <h3 className="font-semibold">Jonas medkirtys</h3>
                                     <div className="flex items-center">
-                                        <img src="https://source.unsplash.com/jmURdhtm7Ng/120x120" className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 max-w-[80px]" />
+                                        <video className="dark:shadow-xl border-white dark:border-gray-800 rounded-full align-middle border-8 max-w-[80px]" autoPlay muted >
+                                            <source src={"https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F40938050158.mp4?alt=media&token=1a015511-bbe4-4733-b460-c474c1ff8a2e&quot"} type="video/mp4" />
+                                        </video>
                                         <p>Influenceris. Realybes show Zvaigzde ir begemotas nugaletojas</p>
                                     </div>
                                 </div>
