@@ -25,7 +25,7 @@ export default function Home() {
     return <section className="bg-gray-100 dark:bg-gray-900 py-5 px-5">
         <div className="flex">
             <div className="flex flex-col flex-1 py-5 pl-5 overflow-hidden justify-center">
-                <h1 className="inline text-2xl font-semibold leading-none text-center pb-5">Active investigations</h1>
+                <h1 className="inline text-2xl font-semibold leading-none text-center pb-5">Clues</h1>
             </div>
         </div>
         <div className="px-5 pb-5 space-y-5">
