@@ -5,5 +5,6 @@ export interface NotebookEntriesDTO {
     dialogTreeId: string,
     visibilityTag: string
     adminNotes: string,
+    category: string,
     isActiveOnStart: boolean
 }
