@@ -16,6 +16,9 @@ export interface ButtonPayload extends ConditionPayload, LockConditionPayload {
     imageUrl: string;
     soundUrl: string;
     actionId: string;
+    passCondition?: boolean;
+    conditionalText?: string;
+    hasCondition: boolean;
 }
 
 // TODO delete this
