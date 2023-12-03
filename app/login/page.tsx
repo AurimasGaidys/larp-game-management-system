@@ -11,8 +11,8 @@ export default function Login() {
 
   // Initialize Firebase
   const router = useRouter();
-  const [email, setEmail] = useState("aurimas@test.lt");
-  const [password, setPassword] = useState("aurimas@ss.lt");
+  const [email, setEmail] = useState("mp3@ss.com");
+  const [password, setPassword] = useState("mp3mp3");
 
   useEffect(() => {
     (async () => {
