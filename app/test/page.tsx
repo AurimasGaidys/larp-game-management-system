@@ -57,7 +57,7 @@ export default function Login() {
 
           <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 rounded-full bottom-[13px] left-1/2">
             <div className="flex flex-row justify-center">
-              <div className="w-[4rem] w-[4rem]  bg-[url('/Tab6.png')]">
+              <div className="w-[4rem] w-[4rem]  bg-[url('/Tab6.png')] bg-no-repeat mt-[6px]">
                 <div className="w-[4rem] h-[4rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
               </div>
               <div className="flex w-[4rem] w-[4rem] bg-[url('/Tab6.png')] mt-4 justify-center">
