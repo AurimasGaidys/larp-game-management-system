@@ -30,7 +30,7 @@ export default function Login() {
           <div
             className={`h-[66px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
           >
-            <div className="w-[2rem] h-[2rem] bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
+            <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
           </div>
         </div>
       );
@@ -40,7 +40,7 @@ export default function Login() {
           <div
             className={`h-[51px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
           >
-            <div className="w-[2rem] h-[2rem] bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
+            <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
           </div>
         </div>
       );
