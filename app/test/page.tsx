@@ -60,18 +60,19 @@ export default function Login() {
               <div className="w-[4rem] w-[4rem]  bg-[url('/Tab6.png')] bg-no-repeat mt-[6px]">
                 <div className="w-[4rem] h-[4rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
               </div>
-              <div className="flex w-[4rem] w-[4rem] bg-[url('/Tab6.png')] mt-4 justify-center">
-                <div className="w-[4rem] h-[4rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
-              </div>
-              <div className="w-[4rem] w-[4rem]  bg-[url('/Tab6.png')] mt-4">
+              <div className="h-[52px] w-[4rem]  bg-[url('/Tab6.png')] mt-4">
                 <div className="w-[3rem] h-[3rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
               </div>
-              <div className="w-16 h-16 bg-[url('/Tab6.png')] mt-4">
+              <div className="h-[52px] w-[4rem]  bg-[url('/Tab6.png')] mt-4">
                 <div className="w-[3rem] h-[3rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
               </div>
               <Tab
                 image={"/bottom-menu/game_rules_icon2.png"}
                 selected={true}
+              />
+              <Tab
+                image={"/bottom-menu/game_rules_icon2.png"}
+                selected={false}
               />
               <Tab
                 image={"/bottom-menu/game_rules_icon2.png"}
