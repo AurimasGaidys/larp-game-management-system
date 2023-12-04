@@ -36,9 +36,9 @@ export default function Login() {
       );
     } else {
       return (
-        <div className="w-16 h-[51px] border-[2px] border-[#182130] z-50 m-1 mt-[14px]">
+        <div className="w-16 h-[51px] border-[2px] border-[#182130] z-50 m-1 mt-[17px]">
           <div
-            className={`h-[51px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
+            className={`h-[49px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
           >
             <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
           </div>
@@ -55,7 +55,7 @@ export default function Login() {
             Dvidlis
           </h1>
 
-          <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 rounded-full bottom-[11px] left-1/2">
+          <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 rounded-full bottom-[13px] left-1/2">
             <div className="flex flex-row justify-center">
               <div className="w-[4rem] w-[4rem]  bg-[url('/Tab6.png')]">
                 <div className="w-[4rem] h-[4rem] bg-[url('/bottom-menu/game_rules_icon.png')] "></div>
