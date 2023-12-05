@@ -48,9 +48,23 @@ export default function Login() {
   };
 
   return (
-    <div className="flex h-screen bg-gray-100 dark:bg-gray-900 bg-[url('/main/bg.jpg')]">
+    <div className="position: relative flex h-screen bg-gray-100 dark:bg-gray-900 bg-[url('/main/bg.jpg')] bg-cover">
+      <div className="absolute top-[20px] left-[200px] bgh-center bg-no-repeat h-[249px] w-[249px] bg-[url('/main/magnifying_glass.png')] bg-contain z-50"></div>
       <div className="m-auto">
         <div>
+          <div className="absolute top-0 left-0 bg-right-top bg-no-repeat h-full w-full bg-[url('/main/envelope.png')] bg-[length:487px_259px]">
+            <div className="h-full w-full max-w-lg flex flex-col">
+              <div className="h-[80px]"></div>
+            <div className="bg-no-repeat h-[26px] w-[234px] bg-[url('/main/leads.png')] bg-contain flex items-center justify-center"></div>
+              <div className="bg-no-repeat h-[220px] w-[234px] bg-[url('/main/sticky_note.png')] bg-contain flex items-center justify-center">
+                <p className="w-[170px] h-[170px]">
+                  Tekstas tekstas tekstas Tekstas tekstas tekstas Tekstas
+                  tekstas tekstas
+                </p>
+              </div>
+            </div>
+          </div>
+
           <h1 className="text-6xl uppercase font-extrabold text-center">
             Dvidlis
           </h1>
