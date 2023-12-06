@@ -7,10 +7,12 @@ const handWriting = Kalam({
 
 export const StickyNote = () => {
   return (
-    <div className="bg-no-repeat h-[220px] w-[234px] bg-[url('/main/sticky_note.png')] bg-contain flex items-center justify-center">
-      <p className={`w-[170px] h-[170px] ${handWriting.className}`}>
-        It's all fun and games until you realize all you clues are
-        stored here. 'Beware of the Sloth!
+    <div className="bg-no-repeat h-[220px] w-[234px] bg-contain flex items-center justify-center">
+      <p
+        className={`w-[200px] h-[170px] text-[#1A222F] ${handWriting.className}`}
+      >
+        Who said detective work can't be fun? All your clues are tucked away
+        right here. But watch out, the Sloth is on the prowl!
       </p>
     </div>
   );

@@ -55,15 +55,15 @@ export default function Login() {
   };
 
   return (
-    <div className="relative flex bg-gray-100 dark:bg-gray-900 bg-[url('/main/bg.jpg')] bg-repeat">
-      <div className="absolute top-[20px] left-[200px] bgh-center bg-no-repeat h-[249px] w-[249px] bg-[url('/main/magnifying_glass.png')] bg-contain z-50"></div>
+    <div className="relative flex bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
+      <div className="absolute top-[20px] left-[200px] bgh-center bg-no-repeat h-[249px] w-[249px] bg-[url('/kd/magnifying_glass.png')] bg-contain z-50"></div>
       <div className="m-auto">
         <div>
-          <div className="absolute top-0 left-0 bg-right-top bg-no-repeat h-full w-full bg-[url('/main/envelope.png')] bg-[length:487px_259px]">
+          <div className="absolute top-0 left-0 bg-right-top bg-no-repeat h-full w-full bg-[url('/kd/envelope.png')] bg-[length:487px_259px]">
             <div className="h-full w-full max-w-lg flex flex-col">
               <div className="h-[80px]"></div>
-              <div className="bg-no-repeat h-[26px] w-[234px] bg-[url('/main/leads.png')] bg-contain flex items-center justify-center"></div>
-              <div className="bg-no-repeat h-[220px] w-[234px] bg-[url('/main/sticky_note.png')] bg-contain flex items-center justify-center">
+              <div className="bg-no-repeat h-[26px] w-[234px] bg-[url('/kd/leads.png')] bg-contain flex items-center justify-center"></div>
+              <div className="bg-no-repeat h-[220px] w-[234px] bg-[url('/kd/sticky_note.png')] bg-contain flex items-center justify-center">
                 <p className={`w-[170px] h-[170px] ${roboto.className}`}>
                   Tekstas tekstas tekstas Tekstas tekstas tekstas Tekstas
                   tekstas tekstas
@@ -73,65 +73,65 @@ export default function Login() {
           </div>
 
           <div className="h-[350px]" />
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
+          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
             <div className={`w-[100px] h-[150px] flex flex-col items-center justify-center`}>
               <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
               <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
+                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${roboto.className}`}
               >
                 Read more
               </p>
             </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
+            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
           </div>
 
       
 
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
+          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
             <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
               <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
               <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
+                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${roboto.className}`}
               >
                 Read more
               </p>
             </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
+            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
           </div>
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
+          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
             <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
               <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
               <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
+                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${roboto.className}`}
               >
                 Read more
               </p>
             </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
-          </div>
-
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
-            <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
-              <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
-              <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
-              >
-                Read more
-              </p>
-            </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
+            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
           </div>
 
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
+          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
             <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
               <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
               <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
+                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${roboto.className}`}
               >
                 Read more
               </p>
             </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
+            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
+          </div>
+
+          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
+            <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
+              <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
+              <p
+                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${roboto.className}`}
+              >
+                Read more
+              </p>
+            </div>
+            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
           </div>
 
           <div className="h-[100px]" />
@@ -248,7 +248,7 @@ export default function Login() {
 //   ];
 
 //   return (
-//     <div className="flex h-screen bg-gray-100 dark:bg-gray-900 bg-[url('/main/bg.jpg')]">
+//     <div className="flex h-screen bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')]">
 //       <div className="m-auto">
 //         <div>
 //           <h1 className="text-6xl uppercase font-extrabold text-center">
