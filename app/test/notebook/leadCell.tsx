@@ -24,7 +24,7 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
           Read more
         </p>
       </div>
-      <div className="relative h-[190px] w-[190px] bg-no-repeat bg-[url('/ghost.jpeg')] bg-[length:105px_105px] mt-[24px] bg-top">
+      <div className="relative h-[190px] w-[190px] bg-no-repeat bg-[url('/ghost.jpeg')] bg-[length:105px_105px] mt-[34px] bg-top">
         <div className="relative h-[180px] w-[180px] bg-no-repeat bg-[url('/kd/photo_container_temp.png')] bg-contain -mt-[14px]" />
       </div>
     </div>
