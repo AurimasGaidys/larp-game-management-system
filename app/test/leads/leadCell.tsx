@@ -26,7 +26,7 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
       </div>
       <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain">
         <img
-          style={{ padding: 20, paddingTop: 40 }}
+          style={{ padding: 7, paddingTop: 6, maxHeight: 130}}
           src="/ghost.jpeg"
           alt="my image"
         />
