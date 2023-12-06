@@ -74,7 +74,7 @@ export default function Login() {
 
           <div className="h-[350px]" />
           <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
-            <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
+            <div className={`w-[100px] h-[150px] flex flex-col items-center justify-center`}>
               <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
               <p
                 className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
@@ -85,17 +85,7 @@ export default function Login() {
             <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
           </div>
 
-          <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
-            <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
-              <p className={`w-[100px] text-[#A81600] ${roboto.className}`}>Lead number one</p>
-              <p
-                className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/main/read_more_bg.png')] ${roboto.className}`}
-              >
-                Read more
-              </p>
-            </div>
-            <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/main/ticket_thumb.png')] bg-contain"></div>
-          </div>
+      
 
           <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/main/ticket_bg.png')] bg-contain flex p-2">
             <div className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}>
