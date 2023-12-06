@@ -11,11 +11,11 @@ interface LeadCellProps {
 
 export const LeadCell = ({ lead }: LeadCellProps) => {
   return (
-    <div className="relative h-[150px] w-[375px] bg-no-repeat bg-[url('/kd/ticket_bg.png')] bg-contain flex p-2">
+    <div className="relative h-[205px] w-[390px] bg-no-repeat bg-[url('/kd/paper_bg.png')] bg-contain flex p-8 items-center justify-end">
       <div
         className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}
       >
-        <p className={`w-[100px] text-[#A81600] ${handWriting.className}`}>
+        <p className={`w-[100px] text-[#1A222F] ${handWriting.className}`}>
           {lead}
         </p>
         <p
@@ -24,7 +24,9 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
           Read more
         </p>
       </div>
-      <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
+      <div className="relative h-[190px] w-[190px] bg-no-repeat bg-[url('/ghost.jpeg')] bg-[length:105px_105px] mt-[24px] bg-top">
+        <div className="relative h-[180px] w-[180px] bg-no-repeat bg-[url('/kd/photo_container_temp.png')] bg-contain -mt-[14px]" />
+      </div>
     </div>
   );
 };

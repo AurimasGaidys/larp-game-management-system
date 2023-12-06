@@ -15,7 +15,7 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
       <div
         className={`w-[100px] h-[150px] flex flex-col items-start justify-center`}
       >
-        <p className={`w-[100px] text-[#A81600] ${handWriting.className}`}>
+        <p className={`w-[100px] text-[#1A222F] ${handWriting.className}`}>
           {lead}
         </p>
         <p
@@ -24,7 +24,13 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
           Read more
         </p>
       </div>
-      <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain"></div>
+      <div className="relative h-[136px] w-[236px] bg-no-repeat bg-[url('/kd/ticket_thumb.png')] bg-contain">
+        <img
+          style={{ padding: 20, paddingTop: 40 }}
+          src="/ghost.jpeg"
+          alt="my image"
+        />
+      </div>
     </div>
   );
 };

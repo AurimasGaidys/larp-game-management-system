@@ -9,7 +9,7 @@ const roboto = Kalam({
 });
 
 export default function Page() {
-  const leads = ["First lead data", "Second lead", "Third", "Fourth", "Fifth", "Sixth"];
+  const leads = ["First Notebook entry data", "Second entry", "Third", "Fourth", "Fifth", "Sixth"];
 
   return (
     <div className="relative flex bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
