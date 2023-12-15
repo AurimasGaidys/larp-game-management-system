@@ -20,7 +20,7 @@ export default function Page() {
 
   return (
     <>
-      <div className="fixed top-[0px] left-[0px] h-[200px] w-full bg-no-repeat bg-[url('/kd/topCorner.png')] bg-contain z-30"></div>
+      <div className="fixed top-[0px] left-[0px] h-full w-full bg-no-repeat bg-[url('/kd/topCorner.png')] bg-contain z-30"></div>
       <div className="fixed bottom-[0px] right-[0px] h-[200px] w-full bg-no-repeat bg-[url('/kd/bottomRightCorner.png')] bg-contain z-30 bg-bottom"></div>
       <div className="relative flex bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
         <div className="absolute top-[20px] left-[200px] bgh-center bg-no-repeat h-[249px] w-[249px] bg-[url('/kd/magnifying_glass.png')] bg-contain z-50"></div>
