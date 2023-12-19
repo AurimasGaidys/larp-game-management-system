@@ -1,10 +1,8 @@
 'use client';
 
-//declare module 'react-qr-scanner';
 
 import { useState } from "react";
 import { useRouter } from 'next/navigation'
-//  import QrReader from 'react-qr-scanner'
 
 import dynamic from "next/dynamic";
 
@@ -32,13 +30,11 @@ export default function Page() {
   }
 
   return <div>
-    <h1>Scan QR code</h1>
     {QrReader && <QrReader
       delay={300}
       style={{
-        height: 240,
-        width: 320,
-        borderRadius: 10
+        height: "100%",
+        width:  "100%"
       }}
       facingMode={"environment"}
       constraints={{
