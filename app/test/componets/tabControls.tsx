@@ -31,13 +31,21 @@ const Tab = ({ image, selected }: ITab) => {
 
 interface Props {
   children: React.ReactNode;
-  selected: "items" | "rules" | "notebook" | "profile" | "scan" | "leads" | "none";
+  selected:
+    | "items"
+    | "rules"
+    | "notebook"
+    | "profile"
+    | "scan"
+    | "leads"
+    | "none";
 }
 
 export const TabControlls = ({ children, selected }: Props) => {
   const renderBg = (selected: string) => {
     switch (selected) {
       case "items":
+      case "none":
         return (
           <div className="h-[10px] bg-[#529498]  border-t-[1px] border-[#D9D9D9]"></div>
         );

@@ -13,7 +13,7 @@ export const ItemHeader = ({ name }: LeadListProps) => {
   return (
     <div className="flex flex-col items-center">
       <div className="h-[25px]" />
-      <div className="bg-bottom bg-no-repeat h-[188px] w-[263px] bg-[url('/kd/item_tag.png')] bg-cover z-10 flex items-start pl-[78px] pt-[10px]">
+      <div className="bg-bottom bg-no-repeat h-[188px] w-[263px] bg-[url('/kd/item_tag.png')] bg-cover z-40 flex items-start pl-[78px] pt-[10px]">
         <div
           className={`w-[160px] h-[100px] flex flex-col items-start justify-center overflow-scroll`}
         >
