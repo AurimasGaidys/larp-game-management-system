@@ -31,7 +31,7 @@ const Tab = ({ image, selected }: ITab) => {
 
 interface Props {
   children: React.ReactNode;
-  selected: "items" | "rules" | "notebook" | "profile" | "scan" | "leads";
+  selected: "items" | "rules" | "notebook" | "profile" | "scan" | "leads" | "none";
 }
 
 export const TabControlls = ({ children, selected }: Props) => {
