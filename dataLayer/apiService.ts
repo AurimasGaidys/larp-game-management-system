@@ -1,4 +1,3 @@
-import firebase from 'firebase/compat/app';
 import 'firebase/compat/functions';
 import { fbFunctions } from '../dataLayer/initFirebase';
 import { httpsCallable } from "firebase/functions";
