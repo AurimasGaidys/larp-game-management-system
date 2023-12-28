@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { TabControlls } from "../../../components/tabControls";
 import { onGetNotesCall } from "../../../dataLayer/apiService";
 import { NotebookEntriesDTO } from "../../../models/notebookEntries";
-import { LeadList } from "./leadsList";
+import { CatList } from "./catList";
+import { NotesList } from "./notesList";
 import { StickyNote } from "./StickyNote";
 
 const roboto = Kalam({
@@ -59,21 +60,14 @@ export default function Page() {
               </div>
             </div>
             {category == "" ? (
-              <LeadList
+              <CatList
                 leads={categories}
                 onClick={(x) => {
                   setCategory(x);
                 }}
               />
             ) : (
-              <LeadList
-                leads={notes
-                  ?.filter((x) => x.category == category)
-                  .map((x) => x.name)}
-                onClick={(x) => {
-                  alert("missing design for " + x);
-                }}
-              />
+              <NotesList notes={notes?.filter((x) => x.category == category)} />
             )}
           </div>
         </div>

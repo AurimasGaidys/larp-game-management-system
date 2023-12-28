@@ -27,6 +27,9 @@ export interface User {
     stats: EventStat[],
     tags: string[],
     timers: EventTimer[],
+    // TODO add for profile
+    // achivements: EventTimer[],
+    // friends: EventTimer[],
 
     created: number,
     lastLogin: number,

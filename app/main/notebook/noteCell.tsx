@@ -1,4 +1,5 @@
 import { Kalam } from "next/font/google";
+import { NotebookEntriesDTO } from "../../../models/notebookEntries";
 
 const handWriting = Kalam({
   weight: "300",
@@ -6,11 +7,10 @@ const handWriting = Kalam({
 });
 
 interface LeadCellProps {
-  lead: string;
-  onClick: (id: string) => void;
+  note: NotebookEntriesDTO;
 }
 
-export const LeadCell = ({ lead, onClick }: LeadCellProps) => {
+export const NoteCell = ({ note }: LeadCellProps) => {
   return (
     <div className="relative h-[205px] w-[390px] bg-no-repeat bg-contain flex p-[15px] items-center justify-end">
       <div className="absolute h-[90px] w-[86px] bg-no-repeat bg-[url('/ghost.jpeg')] bg-cover bg-top -rotate-2 top-[26px] right-[71px]" />
@@ -19,16 +19,14 @@ export const LeadCell = ({ lead, onClick }: LeadCellProps) => {
           className={`absolute left-[60px] w-[100px] h-[150px] flex flex-col items-start justify-center -rotate-6`}
         >
           <p className={`w-[100px] text-[#1A222F] ${handWriting.className}`}>
-            {lead}
+            {note.name}
           </p>
-          <p
-            onClick={() => {
-              onClick(lead);
-            }}
+          <a
+            href={`./dt/${note.dialogTreeId}`}
             className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${handWriting.className}`}
           >
             Read more
-          </p>
+          </a>
         </div>
       </div>
     </div>
