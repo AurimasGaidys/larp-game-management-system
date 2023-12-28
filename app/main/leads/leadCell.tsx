@@ -24,11 +24,12 @@ export const LeadCell = ({ lead }: LeadCellProps) => {
           <p className={`w-[100px] text-[#1A222F] ${handWriting.className}`}>
             {lead.name}
           </p>
-          <p
+          <a
+            href={`./dt/${lead.dialogTreeId}`}
             className={`flex items-center justify-center w-[80px] h-[36px] bg-no-repeat bg-contain text-[#A81600] text-center bg-[url('/kd/read_more_bg.png')] ${handWriting.className}`}
           >
             Read more
-          </p>
+          </a>
         </div>
       </div>
     </div>
