@@ -18,13 +18,19 @@ export const ButtonElement = (p: TextProps) => {
   const [loading, setLoading] = useRecoilState(globalLoadingState);
 
   const cata = JSON.parse(p.payload) as ButtonPayload;
+  const isLocked = cata.hasCondition && !cata.passCondition;
+  const conditionText = isLocked
+    ? cata.conditionalText
+    : cata.conditionalTrueText;
+
   return (
     <>
       <DTButton
         loading={loading}
         title={cata.name}
-        disabled={cata.hasCondition && !cata.passCondition}
-        disabledTitle={JSON.stringify(cata)}
+        locked={isLocked}
+        buttonDescription={conditionText}
+        buttonImage={cata.imageUrl}
         onClick={() => {
           setLoading(true);
           onAction(pathname || "", cata.actionId, p.treeId, "").then(
@@ -43,7 +49,6 @@ export const ButtonElement = (p: TextProps) => {
           );
         }}
       />
-      { cata.hasCondition && <p>{cata.conditionalText}</p>}
     </>
   );
 };
