@@ -42,7 +42,7 @@ export default function Page() {
             </div>
           );
         })}
-        {leads.map((lead) => {
+        {leads.slice(0, 3).map((lead) => {
           return (
             <div className="relative">
               <div className="absolute top-[13px] left-[20px] bg-no-repeat bg-center w-[85px] h-[124px] bg-[url('/256.jpeg')] bg-cover z-20"></div>
