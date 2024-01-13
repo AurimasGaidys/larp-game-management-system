@@ -27,7 +27,7 @@ export default function Login() {
         // Signed in 
         const user = userCredential.user;
         console.log(user);
-        router.push('/main')
+        router.push('/main/leads')
         // ...
       })
       .catch((error) => {

@@ -13,8 +13,6 @@ export default function RootLayout({
       <head />
       <body>
         <MainHeader />
-        <UserContext />
-        <EventContext />
         {children}</body>
     </html>
   )
