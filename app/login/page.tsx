@@ -13,6 +13,7 @@ import { PrimaryButton } from "../../components/base/button/PrimaryButton";
 import { TextInput } from "../../components/base/imput/TextInput";
 import { Kalam } from "next/font/google";
 import { DTButton } from "../../components/base/button/DTButton";
+import { BaseButton } from "../../components/base/button/BaseButton";
 const handWriting = Kalam({
   weight: "300",
   subsets: ["latin"],
@@ -103,7 +104,12 @@ export default function Login() {
           />
           <div className="m-[7px] -mt-[10px] border-dotted border-t-[2px] border-[#9C8376]"></div>
         </div>
-        <DTButton title="Login" onClick={login} />
+        <BaseButton title="Login" onClick={login} />
+        <div
+          className={`underline text-center z-40 text-[#1A222F] ${handWritingb.className} text-[20px] `}
+        >
+          Forgot Password?
+        </div>
       </div>
     </div>
   );
