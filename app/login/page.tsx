@@ -102,7 +102,7 @@ export default function Login() {
           />
           <div className="m-[7px] -mt-[10px] border-dotted border-t-[2px] border-[#9C8376]"></div>
         </div>
-        <BaseButton title="Login" onClick={login} />
+        <BaseButton title="Getting started" onClick={login} />
         <div
           className={`underline text-center z-40 text-[#1A222F] ${handWritingb.className} text-[20px] `}
         >
