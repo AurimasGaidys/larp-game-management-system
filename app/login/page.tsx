@@ -9,10 +9,8 @@ import {
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { firebaseAuth } from "../../dataLayer/initFirebase";
-import { PrimaryButton } from "../../components/base/button/PrimaryButton";
 import { TextInput } from "../../components/base/imput/TextInput";
 import { Kalam } from "next/font/google";
-import { DTButton } from "../../components/base/button/DTButton";
 import { BaseButton } from "../../components/base/button/BaseButton";
 const handWriting = Kalam({
   weight: "300",

@@ -74,7 +74,7 @@ export const TabControlls = ({ children, selected }: Props) => {
 
   return (
     <>
-      <div className="m-auto">
+      <div className="m-auto min-h-screen">
         {children}
         <div className="fixed z-50 w-full h-16 max-w-lg -translate-x-1/2 rounded-full bottom-[13px] left-1/2">
           <div className="flex flex-row justify-center">
