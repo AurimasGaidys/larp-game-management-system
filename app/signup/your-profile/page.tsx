@@ -23,7 +23,7 @@ const handWritingb = Kalam({
 
 export default function Signup({ searchParams }: any) {
   const router = useRouter();
-  const [name, setName] = useState("mp3@ss.com");
+  const [name, setName] = useState("");
   const selectedUrl = useRecoilValue(iconUrl);
 
   useEffect(() => {
@@ -84,8 +84,8 @@ export default function Signup({ searchParams }: any) {
             </div>
             <div className="h-[132px]"></div>
             <BorderlessTextInput
-              placeholder="Email"
-              type={"email"}
+              placeholder="Your name"
+              type={"name"}
               value={name}
               onChange={(e) => setName(e)}
             />

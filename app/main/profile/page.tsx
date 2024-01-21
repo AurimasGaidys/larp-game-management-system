@@ -11,6 +11,10 @@ const handWriting = Kalam({
 
 export default function Page() {
 
+  const logout = () => {
+    alert("logout");
+  }
+
   const userObject = useRecoilValue(globalUserState);
 
   const leads = [
@@ -24,14 +28,14 @@ export default function Page() {
 
   return (
     <div className="relative flex bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
-      <div className="absolute left-[50%] top-[138px] bg-no-repeat w-[150px] h-[150px] bg-[url('/512.jpeg')] bg-contain -translate-x-1/2"></div>
+      <div className="absolute left-[50%] top-[138px] bg-no-repeat w-[150px] h-[150px] bg-contain -translate-x-1/2" style={{ backgroundImage: `url(${userObject?.imageUrl})` }}></div>
       <div
         className={`absolute left-[50%] top-[325px] -translate-x-1/2 z-40 text-[#1A222F] ${handWriting.className} text-2xl`}
       >
         Detective {userObject?.name || "John Doe"}
       </div>
       <div className="absolute left-[50%] top-[0] h-[280px] w-[280px] -translate-x-[64%]  bgh-center bg-no-repeat h-[389px] w-[582px] bg-[url('/kd/profile/header.png')] bg-contain z-30"></div>
-      <div className="absolute left-[50%] top-[359px] bg-no-repeat w-[138px] h-[65px] bg-[url('/kd/profile/logout.png')] bg-contain translate-x-[25px] z-50"></div>
+      <div onClick={logout} className="absolute left-[50%] top-[359px] bg-no-repeat w-[138px] h-[65px] bg-[url('/kd/profile/logout.png')] bg-contain translate-x-[25px] z-50"></div>
       <div className="absolute left-[50%] top-[420px] bg-no-repeat w-[180px] h-[50px] bg-[url('/kd/profile/achivement_title.png')] bg-contain -translate-x-[180px] z-50"></div>
       <TabControlls selected="profile">
         <div className="m-auto mt-[464px]">
