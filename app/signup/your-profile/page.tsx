@@ -9,6 +9,7 @@ import { BaseButton } from "../../../components/base/button/BaseButton";
 import { BorderlessTextInput } from "../../../components/base/imput/BorderlessTextInput";
 import { useRecoilValue } from "recoil";
 import { iconUrl } from "../../../atoms/signup";
+import { onUpdateBioCall } from "../../../dataLayer/apiService";
 
 const handWriting = Kalam({
   weight: "300",
@@ -42,7 +43,13 @@ export default function Signup({ searchParams }: any) {
       return;
     }
 
-    router.push("/main/leads");
+    onUpdateBioCall({ name, imageUrl: selectedUrl })
+      .then(() => {
+        router.push("/main/leads");
+      })
+      .catch((err) => {
+        alert(err);
+      });
   };
 
   return (

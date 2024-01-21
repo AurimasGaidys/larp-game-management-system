@@ -48,10 +48,10 @@ export const onSaveAgentInfo = async (dto: IOnGetAgentInfo) => {
 }
 
 
-export const onAction= async (pathname: string, actionId: string, treeId: string, pageId: string) => {
+export const onAction = async (pathname: string, actionId: string, treeId: string, pageId: string) => {
 
     const functionRef = httpsCallable(fbFunctions, "onActionCall");
-    const { data } = await functionRef({ actionId, treeId, pageId, pathname});
+    const { data } = await functionRef({ actionId, treeId, pageId, pathname });
     console.log(data);
 
     return data as BaseResponseDto;
@@ -70,6 +70,20 @@ export const onGetNotesCall = async () => {
 
     const functionRef = httpsCallable(fbFunctions, "onGetNotesCall");
     const { data } = await functionRef({});
+    console.log(data);
+
+    return data as BaseResponseDto;
+}
+
+export interface onUserUpdateDataCallProps {
+    name: string;
+    imageUrl: string;
+}
+
+export const onUpdateBioCall = async (dto: onUserUpdateDataCallProps) => {
+
+    const functionRef = httpsCallable(fbFunctions, "onUserUpdateBioCall");
+    const { data } = await functionRef(dto);
     console.log(data);
 
     return data as BaseResponseDto;
