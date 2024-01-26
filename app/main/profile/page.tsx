@@ -41,13 +41,13 @@ export default function Page() {
     },
   ];
 
-  const leads = [
-    "First lead data",
-    "Second lead",
-    "Third",
-    "Fourth",
-    "Fifth",
-    "Sixth",
+  const achivements = [
+    {
+      name: "Found a cat",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      imageUrl:
+        "https://worldquestassets.firebaseapp.com/t_location_kitten_left.png",
+    },
   ];
 
   return (
@@ -71,21 +71,24 @@ export default function Page() {
       <div className="absolute left-[50%] top-[420px] bg-no-repeat w-[180px] h-[50px] bg-[url('/kd/profile/achivement_title.png')] bg-contain -translate-x-[180px] z-50"></div>
       <TabControlls selected="profile">
         <div className="m-auto mt-[464px]">
-          {leads.map((lead) => {
+          {achivements.map((achivement) => {
             return (
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="absolute top-[20px] left-[20px] bg-no-repeat w-[95px] h-[95px] bg-[url('/256.jpeg')] bg-contain z-20"></div>
+                  <div
+                    className="absolute top-[20px] left-[20px] bg-no-repeat w-[95px] h-[95px] bg-cover z-20"
+                    style={{ backgroundImage: `url(${achivement.imageUrl})` }}
+                  ></div>
                   <div className="relative w-[350px] h-[138px] bg-[url('/kd/profile/achivement_cell.png')] bg-contain p-[20px] z-30">
                     <div
                       className={`relative z-40 text-[#1A222F] ${handWriting.className} text-2xl pl-[110px] pt-[10px]`}
                     >
-                      {lead}
+                      {achivement.name}
                     </div>
                     <div
                       className={`relative z-40 text-[#1A222F] ${handWriting.className} text-l pl-[110px]`}
                     >
-                      {lead}
+                      {achivement.description}
                     </div>
                   </div>
                 </div>
