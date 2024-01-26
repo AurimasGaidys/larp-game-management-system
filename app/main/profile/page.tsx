@@ -23,6 +23,13 @@ export default function Page() {
 
   const userObject = useRecoilValue(globalUserState);
 
+  const friends = [
+    {
+      name: "Bob",
+      imageUrl: "/256.jpeg",
+    },
+  ];
+
   const leads = [
     "First lead data",
     "Second lead",
@@ -75,16 +82,16 @@ export default function Page() {
             );
           })}
           <div className=" bg-no-repeat w-[180px] h-[50px] bg-[url('/kd/profile/friends_title.png')] bg-contain z-50 mt-[20px]"></div>
-          {leads.map((lead) => {
+          {friends.map((lead) => {
             return (
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="absolute top-[20px] left-[20px] bg-no-repeat w-[95px] h-[95px] bg-[url('/256.jpeg')] bg-contain z-20"></div>
-                  <div className="relative w-[360px] h-[130px] bg-[url('/kd/profile/friends_cell.png')] bg-contain p-[20px] z-30">
+                  <div className="absolute top-[10px] left-[20px] bg-no-repeat w-[90px] h-[120px] bg-[url('/256.jpeg')] bg-cover z-20"></div>
+                  <div className="relative w-[360px] h-[141px] bg-[url('/kd/profile/friends_cell2.png')] bg-contain p-[20px] z-30">
                     <div
                       className={`relative z-40 text-[#1A222F] ${handWriting.className} text-2xl pl-[110px] pt-[20px]`}
                     >
-                      {lead}
+                      {lead.name}
                     </div>
                   </div>
                 </div>
