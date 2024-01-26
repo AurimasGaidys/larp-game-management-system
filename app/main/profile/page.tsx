@@ -25,8 +25,19 @@ export default function Page() {
 
   const friends = [
     {
-      name: "Bob",
-      imageUrl: "/256.jpeg",
+      name: "Kristina",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F34319280543.jpg?alt=media&token=71d1abf8-5d7f-415a-b81f-7dac274b5c2f",
+    },
+    {
+      name: "Juozas",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F68010147885.jpg?alt=media&token=5e78c1f3-9069-4cf0-bfbc-9e206fdac814",
+    },
+    {
+      name: "Vygis",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F5668676547.jpg?alt=media&token=3b2fed97-efb7-435d-a07d-a4f2f529bec6",
     },
   ];
 
@@ -86,10 +97,13 @@ export default function Page() {
             return (
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="absolute top-[10px] left-[20px] bg-no-repeat w-[90px] h-[120px] bg-[url('/256.jpeg')] bg-cover z-20"></div>
+                  <div
+                    className="absolute top-[10px] left-[20px] bg-no-repeat w-[90px] h-[120px] bg-cover z-20 bg-center"
+                    style={{ backgroundImage: `url(${lead.imageUrl})` }}
+                  ></div>
                   <div className="relative w-[360px] h-[141px] bg-[url('/kd/profile/friends_cell2.png')] bg-contain p-[20px] z-30">
                     <div
-                      className={`relative z-40 text-[#1A222F] ${handWriting.className} text-2xl pl-[110px] pt-[20px]`}
+                      className={`relative z-40 text-[#1A222F] ${handWriting.className} text-2xl pl-[110px] pt-[30px]`}
                     >
                       {lead.name}
                     </div>
