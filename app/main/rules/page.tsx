@@ -13,6 +13,7 @@ import { globalLoadingState } from "../../../atoms/loadingState";
 import { globalUserState } from "../../../atoms/userState";
 import { onGetDT } from "../../../dataLayer/apiService";
 import { ElementFactory } from "../../../components/dt/element-factory";
+import { GlobalGradients } from "../../../components/globalGradients";
 
 const roboto = Kalam({
   weight: "300",
@@ -79,6 +80,7 @@ const Post = (props: PageProps) => {
   return (
     <>
       <div className="relative flex h-full w-full bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
+        <GlobalGradients location="rules" />
         <TabControlls selected="none">
           <ItemHeader />
           {treeData == null ? (

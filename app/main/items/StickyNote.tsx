@@ -8,7 +8,7 @@ const handWriting = Kalam({
 export const StickyNote = () => {
   return (
     <div className="flex flex-col bg-no-repeat h-[220px] w-[234px] bg-[url('/kd/items_header)paper.png')] bg-contain flex items-center justify-center pt-[30px]">
-      <div className="z-30 bg-no-repeat h-[26px] w-[234px] bg-[url('/kd/items_highlight.png')] bg-contain flex items-center justify-center mb-[30px]"></div>
+      <div className="z-40 bg-no-repeat h-[26px] w-[234px] bg-[url('/kd/items_highlight.png')] bg-contain flex items-center justify-center mb-[30px]"></div>
       <p
         className={`w-[170px] h-[170px] text-[#1A222F] ${handWriting.className}`}
       >

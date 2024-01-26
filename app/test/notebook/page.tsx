@@ -34,7 +34,7 @@ export default function Page() {
             <div className="absolute top-0 left-0 bg-right-top bg-no-repeat h-full w-full bg-[url('/kd/notebook.png')] bg-[length:464px_429px]">
               <div className="h-full w-full max-w-lg flex flex-col p-8">
                 <div className="h-[40px]"></div>
-                <div className="z-30 bg-no-repeat h-[27px] w-[174px] bg-[url('/kd/notebook_title.png')] bg-contain flex items-center justify-center"></div>
+                <div className="z-40 bg-no-repeat h-[27px] w-[174px] bg-[url('/kd/notebook_title.png')] bg-contain flex items-center justify-center"></div>
                 <StickyNote />
               </div>
             </div>

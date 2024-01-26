@@ -2,6 +2,7 @@
 import { Kalam } from "next/font/google";
 import { useRecoilState } from "recoil";
 import { globalUserState } from "../../../atoms/userState";
+import { GlobalGradients } from "../../../components/globalGradients";
 import { TabControlls } from "../../../components/tabControls";
 import { List } from "./list";
 import { StickyNote } from "./StickyNote";
@@ -19,13 +20,8 @@ export default function Page() {
   return (
     <>
       <div className="fixed top-[0px] left-[0px] h-[66px] w-[272px] bg-no-repeat bg-[url('/kd/top_shadow.png')] bg-contain z-20"></div>
-      <div
-        className="fixed top-[0px] left-[0px] h-[300px] w-full z-20"
-        style={{
-          background:
-            "linear-gradient(173deg, rgba(83, 150, 153, 0.32) 2.29%, rgba(83, 150, 153, 0.00) 57.3%)",
-        }}
-      ></div>
+      <GlobalGradients location="items" />
+
       <div className="relative min-h-screen flex h-full w-full bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
         <TabControlls selected="items">
           <div className="m-auto">

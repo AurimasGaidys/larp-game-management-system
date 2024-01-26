@@ -33,7 +33,6 @@ export default function Page() {
 
   return (
     <div className="w-full h-full">
-      <div className="fixed top-[0px] left-[0px] h-[66px] w-[272px] bg-no-repeat bg-[url('/kd/top_shadow.png')] bg-contain z-20"></div>
       <TabControlls selected="scan">
       <div className="absolute left-[50%] top-[50%] h-[280px] w-[280px] -translate-y-1/2 -translate-x-1/2 -translate-x-1/2 bg-no-repeat bg-[url('/kd/qr-corners.png')] bg-contain flex"></div>
       {QrReader && (
