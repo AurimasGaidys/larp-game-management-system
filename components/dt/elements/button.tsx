@@ -36,7 +36,9 @@ export const ButtonElement = (p: TextProps) => {
           onAction(pathname || "", cata.actionId, p.treeId, "").then(
             (result) => {
               if (result.success) {
-                const url = JSON.parse(result.data).data.url;
+                let url = JSON.parse(result.data).data.url;
+                // HAck todo fix.
+                url = url.replace("Global-Game-Rules", "rules");
                 router.push(url + `?reload=${new Date().getTime()}`);
               } else {
                 alert("Request Failed" + result.error);
