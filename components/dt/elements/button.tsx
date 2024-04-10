@@ -40,7 +40,6 @@ export const ButtonElement = (p: TextProps) => {
                 // HAck todo fix.
                 url = url.replace("Global-Game-Rules", "rules");
                 url = url.replace("main/main/", "main/");
-                debugger;
                 router.push(url + `?reload=${new Date().getTime()}`);
               } else {
                 alert("Request Failed" + result.error);

@@ -13,7 +13,7 @@ export const UserContext = () => {
   const [userObject, setUserObject] = useRecoilState(globalUserState);
   const [eventId, setEventId] = useRecoilState(globalEventId);
   const [userId, setUserId] = useState("");
-  const id = firebaseAuth.onAuthStateChanged((user) => {
+  firebaseAuth.onAuthStateChanged((user) => {
     if (user) {
       setUserId(user.uid);
     } else {
@@ -28,12 +28,10 @@ export const UserContext = () => {
 
     const docRef = doc(db, DatabaseTables.users, userId);
     const unsubscribe = onSnapshot(docRef, (docSnap) => {
-      console.log("Current data: ", docSnap.data());
       if (docSnap.exists()) {
         const result = docSnap.data() as User;
         setUserObject(result);
         setEventId(result.eventId);
-        console.log("UserContext: ", result.tags);
       } else {
         console.log("No such document!");
       }

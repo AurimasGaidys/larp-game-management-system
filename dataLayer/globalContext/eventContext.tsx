@@ -14,8 +14,6 @@ export const EventContext = () => {
     const [eventId, setEventId] = useRecoilState(globalEventId);
 
     useEffect(() => {
-
-
         if (eventId === "") {
             return;
         }
