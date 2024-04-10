@@ -6,6 +6,7 @@ interface Props {
   value: string;
   onChange: (value: string) => void | undefined;
   icon?: string;
+  disabled?: boolean;
 }
 
 export const TextInput = ({
@@ -13,6 +14,7 @@ export const TextInput = ({
   type,
   value,
   onChange,
+  disabled,
   icon,
 }: Props) => {
   if (icon) {
@@ -37,6 +39,7 @@ export const TextInput = ({
     return (
       <input
         value={value}
+        disabled={disabled}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         type={type}

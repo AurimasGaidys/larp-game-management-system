@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { doc, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
@@ -10,41 +10,37 @@ import { DatabaseTables } from "../dbTable";
 import { db, firebaseAuth } from "../initFirebase";
 
 export const UserContext = () => {
+  const [userObject, setUserObject] = useRecoilState(globalUserState);
+  const [eventId, setEventId] = useRecoilState(globalEventId);
+  const [userId, setUserId] = useState("");
+  const id = firebaseAuth.onAuthStateChanged((user) => {
+    if (user) {
+      setUserId(user.uid);
+    } else {
+      setUserObject(null);
+    }
+  });
 
-    const [userObject, setUserObject] = useRecoilState(globalUserState);
-    const [eventId, setEventId] = useRecoilState(globalEventId);
-    const [userId, setUserId] = useState("")
-    const id = firebaseAuth.onAuthStateChanged((user) => {
-        if (user) {
-            setUserId(user.uid)
-        } else {
-        }
+  useEffect(() => {
+    if (userId === "") {
+      return;
+    }
+
+    const docRef = doc(db, DatabaseTables.users, userId);
+    const unsubscribe = onSnapshot(docRef, (docSnap) => {
+      console.log("Current data: ", docSnap.data());
+      if (docSnap.exists()) {
+        const result = docSnap.data() as User;
+        setUserObject(result);
+        setEventId(result.eventId);
+        console.log("UserContext: ", result.tags);
+      } else {
+        console.log("No such document!");
+      }
     });
 
+    return () => unsubscribe();
+  }, [userId]);
 
-    useEffect(() => {
-        if (userId === "") {
-            return;
-        }
-
-        
-        const docRef = doc(db, DatabaseTables.users, userId);
-        const unsubscribe = onSnapshot(docRef, docSnap => {
-            console.log("Current data: ", docSnap.data());
-            if (docSnap.exists()) {
-                
-                const result = docSnap.data() as User
-                setUserObject(result);
-                setEventId(result.eventId);
-                console.log("UserContext: ", result.tags);
-            } else {
-                console.log("No such document!");
-            }
-        });
-
-        return () => unsubscribe();
-    }, [userId]);
-
-    return <div>UserContext: {userObject?.name}</div>
-
-}
+  return <div>UserContext: {userObject?.name}</div>;
+};

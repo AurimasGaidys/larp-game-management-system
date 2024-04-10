@@ -29,6 +29,7 @@ export default function Signup({ searchParams }: any) {
   const [password, setPassword] = useState("mp3mp3");
   const [password2, setPassword2] = useState("mp3mp3");
   const [isChecked, setIsChecked] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -41,11 +42,20 @@ export default function Signup({ searchParams }: any) {
   };
 
   const register = () => {
+    if (loading) {
+      return;
+    }
+
+    if (password !== password2) {
+      alert("Passwords do not match");
+      return;
+    }
+
     if (!isChecked) {
       alert("Agree with GDPR");
       return;
     }
-
+    setLoading(true);
     createUserWithEmailAndPassword(firebaseAuth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -53,7 +63,9 @@ export default function Signup({ searchParams }: any) {
         console.log(user);
 
         if (searchParams?.code) {
-          router.push("/signup/your-profile?code=" + encodeURI(searchParams?.code));
+          router.push(
+            "/signup/your-profile?code=" + encodeURI(searchParams?.code)
+          );
         } else {
           router.push("/signup/your-profile");
         }
@@ -62,6 +74,9 @@ export default function Signup({ searchParams }: any) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorMessage);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -78,6 +93,7 @@ export default function Signup({ searchParams }: any) {
       <div className="m-auto mt-[150px] w-[350px] z-10">
         <div className="px-5 pb-5">
           <TextInput
+            disabled={loading}
             placeholder="Email"
             type={"email"}
             value={email}
@@ -87,6 +103,7 @@ export default function Signup({ searchParams }: any) {
           <div className="m-[7px] -mt-[10px] border-dotted border-t-[2px] border-[#9C8376]"></div>
           <div className="h-[10px]"></div>
           <TextInput
+            disabled={loading}
             placeholder="Password"
             type={"password"}
             value={password}
@@ -96,6 +113,7 @@ export default function Signup({ searchParams }: any) {
           <div className="m-[7px] -mt-[10px] border-dotted border-t-[2px] border-[#9C8376]"></div>
           <div className="h-[10px]"></div>
           <TextInput
+            disabled={loading}
             placeholder="Repeat Password"
             type={"password"}
             value={password2}
@@ -107,6 +125,7 @@ export default function Signup({ searchParams }: any) {
           {/* {isChecked ? null : <p>Agree with GDPR</p>} */}
           <div className="flex flex-row p-4">
             <input
+              disabled={loading}
               checked={isChecked}
               onChange={handleOnChange}
               id="default-checkbox"
@@ -115,11 +134,17 @@ export default function Signup({ searchParams }: any) {
               className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label className="ml-2 text-sm font-medium text-gray-900">
-              I agree with <a href="http://google.com" className="underline">GDPR rules</a>
+              I agree with{" "}
+              <a href="http://google.com" className="underline">
+                GDPR rules
+              </a>
             </label>
           </div>
         </div>
-        <BaseButton title="Getting started" onClick={register} />
+        <BaseButton
+          title={loading ? "Loading.." : "Getting started"}
+          onClick={register}
+        />
       </div>
     </div>
   );

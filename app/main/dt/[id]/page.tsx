@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { onGetDT } from "../../../../dataLayer/apiService";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ElementFactory } from "../../../../components/dt/element-factory";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { globalLoadingState } from "../../../../atoms/loadingState";
 import { globalEventState } from "../../../../atoms/eventState";
 import { globalUserState } from "../../../../atoms/userState";
@@ -16,7 +16,11 @@ interface PageProps {
 }
 
 const Loading = () => {
-  return <h2>🌀 Loading...</h2>;
+  return (
+    <div className="relative flex justify-center items-center h-full min-h-screen w-full bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
+      <h2>🌀 Loading...</h2>
+    </div>
+  );
 };
 
 interface TreeProps {
@@ -67,16 +71,22 @@ const Page = (props: PageProps) => {
   const params = useSearchParams()?.get("reload");
   const [treeData, setTreeData] = useState();
   const [loading, setLoading] = useRecoilState(globalLoadingState);
-  const [gameObject, setGameObject] = useRecoilState(globalEventState);
-  const [userObject, setUserObject] = useRecoilState(globalUserState);
+
+  const gameObject = useRecoilValue(globalEventState);
+  const userObject = useRecoilValue(globalUserState);
 
   useEffect(() => {
-    console.log("DT PAGE");
+    if (userObject === null) {
+      router.push("/signup");
+      return;
+    }
+  }, [userObject]);
 
+  useEffect(() => {
     if (!props.params.id) {
       router.push("/main/dt");
     }
-
+    setLoading(true);
     onGetDT(props.params.id).then((data) => {
       const locationData = JSON.parse(data.data);
       setTreeData(locationData);
@@ -84,7 +94,7 @@ const Page = (props: PageProps) => {
     });
   }, [props.params.id, params, gameObject, userObject]);
 
-  if (!treeData) {
+  if (!treeData || loading) {
     return <Loading />;
   }
 

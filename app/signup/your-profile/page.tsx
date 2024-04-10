@@ -25,7 +25,7 @@ export default function Signup({ searchParams }: any) {
   const router = useRouter();
   const [name, setName] = useState("");
   const selectedUrl = useRecoilValue(iconUrl);
-
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
     (async () => {
       await setPersistence(firebaseAuth, browserLocalPersistence);
@@ -33,6 +33,10 @@ export default function Signup({ searchParams }: any) {
   }, []);
 
   const submit = async (data: any) => {
+    if (loading) {
+      return;
+    }
+
     if (name === "") {
       alert("Please enter name");
       return;
@@ -42,13 +46,16 @@ export default function Signup({ searchParams }: any) {
       alert("Please enter icon");
       return;
     }
-
+    setLoading(true);
     onUpdateBioCall({ name, imageUrl: selectedUrl })
       .then(() => {
-        router.push("/main/leads");
+        router.push("/main/rules");
       })
       .catch((err) => {
         alert(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -68,7 +75,9 @@ export default function Signup({ searchParams }: any) {
             <div
               className="relative"
               onClick={() => {
-                router.push("/signup/profile-select");
+                if (!loading) {
+                  router.push("/signup/profile-select");
+                }
               }}
             >
               {selectedUrl == "" ? (
@@ -94,7 +103,10 @@ export default function Signup({ searchParams }: any) {
           </div>
         </div>
         <div className="h-[10px]"></div>
-        <BaseButton title="Getting started" onClick={submit} />
+        <BaseButton
+          title={loading ? "Loading.." : "Getting started"}
+          onClick={submit}
+        />
       </div>
     </div>
   );
