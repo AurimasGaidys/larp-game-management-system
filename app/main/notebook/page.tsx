@@ -33,7 +33,12 @@ export default function Page() {
   if (notes.length == 0) {
     return (
       <div className="relative min-h-screen flex bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
-        <p>Loading...</p>
+        <TabControlls selected="notebook">
+          <div className="m-auto flex justify-center">
+            <div className="h-[350px]" />
+            <p className="m-[50px]">No notes found</p>
+          </div>
+        </TabControlls>
       </div>
     );
   }
