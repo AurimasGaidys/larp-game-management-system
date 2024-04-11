@@ -15,9 +15,7 @@ export const ItemHeader = () => {
         <p
           className={`text-[#1A222F] ${handWriting.className} text-[14px] z-30  w-[280px]`}
         >
-          {
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis vestibulum augue massa sed aenean."
-          }
+          Learn about our game.
         </p>
       </div>
       <div className="absolute left-[50%] -top-[0px] bg-bottom bg-no-repeat h-[347px] w-[590px] bg-[url('/kd/rules_header.png')] bg-cover z-20 -translate-x-[320px]"></div>

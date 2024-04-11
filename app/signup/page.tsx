@@ -73,6 +73,7 @@ export default function Signup({ searchParams }: any) {
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
+        alert("This email exists in the system, try another one.");
         console.log(errorMessage);
       })
       .finally(() => {

@@ -12,8 +12,7 @@ export const StickyNote = () => {
       <p
         className={`w-[170px] h-[170px] text-[#1A222F] ${handWriting.className}`}
       >
-        It's all fun and games until you realize all you clues are stored here.
-        'Beware of the Sloth!
+        Items you have collected. They can help to solve the case.
       </p>
     </div>
   );
