@@ -53,10 +53,10 @@ export const TabControlls = ({ children, selected }: Props) => {
         return (
           <div className="h-[10px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9]"></div>
         );
-      case "notebook":
-        return (
-          <div className="h-[10px] bg-[#D2BA59]  border-t-[1px] border-[#D9D9D9]"></div>
-        );
+      // case "notebook":
+      //   return (
+      //     <div className="h-[10px] bg-[#D2BA59]  border-t-[1px] border-[#D9D9D9]"></div>
+      //   );
       case "profile":
         return (
           <div className="h-[10px] bg-[#C86449]  border-t-[1px] border-[#D9D9D9]"></div>
@@ -110,14 +110,14 @@ export const TabControlls = ({ children, selected }: Props) => {
                 className="h-[52px] w-[64px] bg-center bg-no-repeat bg-contain bg-[url('/kd/tabs/items.png')] mt-4"
               />
             )}
-            {selected == "notebook" ? (
+            {/* {selected == "notebook" ? (
               <div className="h-[66px] w-[64px] bg-center bg-no-repeat bg-contain bg-[url('/kd/tabs/notebook-s.png')] mt-[6px]" />
             ) : (
               <Link
                 href="/main/notebook"
                 className="h-[52px] w-[64px] bg-center bg-no-repeat bg-contain bg-[url('/kd/tabs/notebook.png')] mt-4"
               />
-            )}
+            )} */}
             {selected == "scan" ? (
               <div className="h-[66px] w-[64px] bg-center bg-no-repeat bg-contain bg-[url('/kd/tabs/scan-s.png')] mt-[6px]" />
             ) : (
