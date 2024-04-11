@@ -56,7 +56,7 @@ export default function Page() {
       <div className="fixed top-[0px] left-[0px] h-[66px] w-[272px] bg-no-repeat bg-[url('/kd/top_shadow.png')] bg-contain z-20"></div>
       <div
         className="absolute left-[50%] top-[138px] bg-no-repeat w-[150px] h-[150px] bg-contain -translate-x-1/2"
-        style={{ backgroundImage: `url(${userObject?.imageUrl})` }}
+        style={{ backgroundImage: `url(${userObject?.imageUrl || "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F21155827581.jpg?alt=media&token=5c18c3d7-73dc-466c-83f8-1b1569433afa"})` }}
       ></div>
       <div
         className={`absolute left-[50%] top-[325px] -translate-x-1/2 z-40 text-[#1A222F] ${handWriting.className} text-2xl`}
