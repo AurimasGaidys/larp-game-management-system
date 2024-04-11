@@ -5,29 +5,29 @@ interface ITab {
   selected: boolean;
 }
 
-const Tab = ({ image, selected }: ITab) => {
-  if (selected) {
-    return (
-      <div className="w-16 h-[66px]  border-[2px] border-[#182130] z-50 m-1 ">
-        <div
-          className={`h-[66px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
-        >
-          <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
-        </div>
-      </div>
-    );
-  } else {
-    return (
-      <div className="w-16 h-[51px] border-[2px] border-[#182130] z-50 m-1 mt-[17px]">
-        <div
-          className={`h-[49px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
-        >
-          <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
-        </div>
-      </div>
-    );
-  }
-};
+// const Tab = ({ image, selected }: ITab) => {
+//   if (selected) {
+//     return (
+//       <div className="w-16 h-[66px]  border-[2px] border-[#182130] z-50 m-1 ">
+//         <div
+//           className={`h-[66px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
+//         >
+//           <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
+//         </div>
+//       </div>
+//     );
+//   } else {
+//     return (
+//       <div className="w-16 h-[51px] border-[2px] border-[#182130] z-50 m-1 mt-[17px]">
+//         <div
+//           className={`h-[49px] bg-[#A45078]  border-t-[1px] border-[#D9D9D9] flex flex-row justify-center items-center`}
+//         >
+//           <div className="w-[25px] h-[30px] bg-contain bg-center bg-no-repeat bg-[url('/bottom-menu/game_rules_icon2.png')] "></div>
+//         </div>
+//       </div>
+//     );
+//   }
+// };
 
 interface Props {
   children: React.ReactNode;

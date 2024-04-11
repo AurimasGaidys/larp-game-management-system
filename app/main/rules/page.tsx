@@ -81,7 +81,7 @@ const Post = (props: PageProps) => {
     <>
       <div className="relative flex h-full w-full bg-gray-100 dark:bg-gray-900 bg-[url('/kd/bg.jpg')] bg-repeat">
         <GlobalGradients location="rules" />
-        <TabControlls selected="none">
+        <TabControlls selected="rules">
           <ItemHeader />
           {treeData == null ? (
             <div className="w-[371px] ">loading...</div>
