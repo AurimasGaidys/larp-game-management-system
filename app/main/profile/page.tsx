@@ -25,28 +25,28 @@ export default function Page() {
 
   const friends = [
     {
-      name: "Kristina",
+      name: "Aidas",
       imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F34319280543.jpg?alt=media&token=71d1abf8-5d7f-415a-b81f-7dac274b5c2f",
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F14384544706.jpg?alt=media&token=5e41c31e-12c2-4670-ae82-8b4267cacd20",
     },
     {
-      name: "Juozas",
+      name: "Vaidas",
+      imageUrl:
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F71552531439.jpg?alt=media&token=697d7301-a00f-43c9-9c5d-70bc854f10b3",
+    },
+    {
+      name: "Aurimas",
       imageUrl:
         "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F68010147885.jpg?alt=media&token=5e78c1f3-9069-4cf0-bfbc-9e206fdac814",
-    },
-    {
-      name: "Vygis",
-      imageUrl:
-        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/playerIcon%2F5668676547.jpg?alt=media&token=3b2fed97-efb7-435d-a07d-a4f2f529bec6",
     },
   ];
 
   const achivements = [
     {
-      name: "Found a cat",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      name: "Rockit Kaunas",
+      description: "You have taken the first step towards success.",
       imageUrl:
-        "https://worldquestassets.firebaseapp.com/t_location_kitten_left.png",
+        "https://firebasestorage.googleapis.com/v0/b/dvidlis.appspot.com/o/rockit.jpeg?alt=media&token=85292abb-2996-4e9a-8459-8167a532ecbe",
     },
   ];
 
