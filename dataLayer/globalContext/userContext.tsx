@@ -40,5 +40,6 @@ export const UserContext = () => {
     return () => unsubscribe();
   }, [userId]);
 
+  return <div />
   return <div>UserContext: {userObject?.name}</div>;
 };
