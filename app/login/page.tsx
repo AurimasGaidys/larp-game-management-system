@@ -25,8 +25,8 @@ const handWritingb = Kalam({
 export default function Login() {
   // Initialize Firebase
   const router = useRouter();
-  const [email, setEmail] = useState("mp3@ss.com");
-  const [password, setPassword] = useState("mp3mp3");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     (async () => {
